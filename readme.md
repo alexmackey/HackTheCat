@@ -1,19 +1,19 @@
 # Hackthecat - Better defence through learning offense
-Hackthecat is a vunerable node express/mysql app intended for teaching, demonstrating and practicing common security issues and defensive techniques.
+Hackthecat is a vulnerable node express/mysql app intended for teaching, demonstrating and practicing common security issues and defensive techniques.
 
 ![HackTheCat Logo](web/assets/images/hackTheCatLogo.png?raw=true "HackTheCat Logo")
 
-AppSec is generally not taught well (if at all) and we can write better, more secure applications if we understand the approaches and techniques attackers will use to exploit them. This sample application allows you to play and defend against some of these techniques. 
+AppSec is generally not taught well (if at all) and we can write better, more secure applications if we understand the approaches and techniques attackers will use to exploit our solutions. This sample application allows you to play with various offensive techniques and then defend against these attacks. 
 
-This application may also be useful to those studying certifications such as Offensive Security's [OSCP](https://www.offensive-security.com/pwk-oscp/) or [AWAE - Advanced Web Attacks and Exploitation](https://www.offensive-security.com/learn-one/awaeoswe/).
+This is also a good practice application for those studying for security certifications such as Offensive Security's [OSCP](https://www.offensive-security.com/pwk-oscp/), [AWAE - Advanced Web Attacks and Exploitation](https://www.offensive-security.com/learn-one/awaeoswe/).
 
 ## IMPORTANT READ ME FIRST
 
 This application is intended to teach and learn AppSec concepts and deliberately contains many security issues. 
 
-**Under no circumstances should this code be installed on an internet facing or sensitive machine. If an attacker can access this application then it will be very easy for them to gain full access to the machine it is running on.**
+**Under no circumstances should this code be installed on an internet facing or sensitive machine. If an attacker can access this application then it will be very easy for them to gain full access to the machine it is running on and potentially the network it is connected to.**
 
-Do not use offensive security techniques against sites you do not have permission to as it is almost certainly illegal and you could end up in a lot of trouble or even jail. 
+Do not use offensive techniques against sites or applications you do not have permission to as it is almost certainly illegal and you could end up in a lot of trouble or even jail. 
 
 There are many better legal options to develop your skills including more mature projects such as [OWASPs VWAD](https://owasp.org/www-project-vulnerable-web-applications-directory/) or you could explore some great online services like [Hackthebox](https://www.hackthebox.com/) and [Try Hack Me](https://tryhackme.com/).
 

@@ -10,8 +10,7 @@ const pool = mysql.createPool({
 
 module.exports = {
 
-    GetConnectionPool: async function() {       
-
+    GetConnectionPool: async function() {
         return pool.promise();
     }
     

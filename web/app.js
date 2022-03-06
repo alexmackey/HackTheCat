@@ -1,4 +1,4 @@
-const dotenv=require('dotenv').config();
+const dotenv = require('dotenv').config();
 const express = require('express');
 const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
@@ -21,15 +21,16 @@ const sessions = require('express-session');
 
 app.use(morgan('dev'));
 
-
 app.use(sessions(
-  { path: '/', 
-  secret: "secret",
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false, httpOnly: false },
-  maxAge: oneDay,
-  sameSite: false }
+  {
+    path: '/',
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false, httpOnly: false },
+    maxAge: oneDay,
+    sameSite: false
+  }
 ));
 
 app.use(cookieParser());
@@ -49,5 +50,5 @@ app.use('/user/', userProfileRoutes);
 app.use('/contactMessage/', contactMessageRoutes);
 
 app.listen(port, () => {
-  console.log(`Hackthecat app listening on port ${port}`)
+  console.log(`Aw yeah! Hackthecat app ready to hack and listening on port ${port}`)
 });

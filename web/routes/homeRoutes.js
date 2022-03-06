@@ -9,11 +9,8 @@ const express = require('express'),
 router.get('/', async function (req, res) {
 
     const orderByClause = req.query.orderByClause || 'productName';
-
     const products = await productService.getAll(orderByClause);
-
     const textContentResults = await textContentService.getWelcomeText();
-
     const welcomeMessage = pug.render(textContentResults[0].WelcomeMessage);
 
     res.render('pages/home', {
@@ -42,7 +39,6 @@ router.get('/detail', async function (req, res) {
     });
 });
 
-//XSS
 router.post('/write-a-review', async (req, res) => {
 
     const productId = req.body.productId;

