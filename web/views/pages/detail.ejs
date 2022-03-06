@@ -1,0 +1,51 @@
+﻿<%- include('../partials/header'); %>
+
+  <section id="banner">
+
+  </section>
+
+
+  <section id="main" class="container">
+
+    <section class="box special">
+      <header class="major">
+        <h2>
+          <%= productData[0].ProductName %>
+        </h2>
+        <br />
+
+        <img src="assets/images/<%= productData[0].SmallImageUrl %>" class="bike" alt="" />
+
+        <br><br>
+        <h3>Reviews</h3>
+
+        <% if (commentData.length==0) { %>
+          <p>No reviews yet!</p>
+          <br><br>
+          <% } %>
+
+            <% for(var i=0; i < commentData.length; i++) { %>
+              <p>
+                <%- commentData[i].Comment %>
+              </p>
+              <br><br>
+              <% } %>
+
+                <h3>Write a review</h3>
+
+                <form action="write-a-review" method="post">
+                  <input type="hidden" value="<%= productData[0].ProductId %>" name="productId" />
+                  <textarea name="comment"></textarea>
+                  <hr>
+                  <input type="submit" value="Submit" />
+                </form>
+
+                </form>
+
+                <p></p>
+      </header>
+
+    </section>
+  </section>
+
+  <%- include('../partials/footer'); %>

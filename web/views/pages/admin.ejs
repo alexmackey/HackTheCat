@@ -1,0 +1,54 @@
+﻿<%- include('../partials/header'); %>
+
+  <section id="banner">
+
+  </section>
+
+  <section id="main" class="container">
+
+    <section class="box special">
+      <header class="major">
+        <h2>Secret Admin Page</h2>
+
+        <br>
+        <h3>Upload Products</h3>
+
+        <br>
+
+        <p>
+          Expected format:
+
+          <code>
+              { 	"productName" : "testUpload", 	"smallImageUrl" : "1", 	"largeImageUrl" : "2" }
+            </code>
+        </p>
+
+        <BR><BR>
+        <form id='uploadProducts' action='upload-product' method='post'>
+          <textarea name="Product"></textarea>
+          <BR><BR>
+          <input type='submit' value='Add Product' />
+        </form>
+
+        <br><BR>
+
+          <form id='updateMessage' action='update-message' method='post'>
+            <textarea name="welcomeMessage" id="welcomeMessage"><%- welcomeMessage %></textarea>
+            <BR><BR>
+            <input type='submit' value='Update Message' />
+          </form>
+
+          
+          <br><br>
+        <h3>Upload Product Images</h3>
+        <form id='uploadProductImages' action='upload-images' method='post' encType="multipart/form-data">
+          <input type="file" name="myFile" />
+          <BR><BR>
+          <input type='submit' value='Upload!' />
+        </form>
+    </section>
+  </section>
+
+
+
+  <%- include('../partials/footer'); %>

@@ -1,0 +1,69 @@
+﻿ <%- include('../partials/header'); %>
+  
+  <section id="banner">
+  
+  </section>
+  
+  <section id="main" class="container">
+
+    <section class="box special">
+      <header class="major">
+        
+        <h2>Change Profile</h2>     
+        
+        <form id="change-profile-form" action="update-profile" method="post">  
+          
+          <label>Username:</label>
+          <input id="username" name="username" type="text" value="<%- username %>" />
+          <BR>
+            
+          <label>Email:</label>
+          <input id="email" name="email" value="<%- email %>" type="text" />
+         
+          <BR>
+          <input type="submit" value="Update Profile">        
+        </form>
+     
+        <h2>Change Password</h2>     
+        
+        <hr>
+       <% if (changePasswordMessage !='') { %>
+          <p id="form-message"><%= changePasswordMessage %></p>
+          <BR><BR>
+        <% } %>
+
+
+        <form id="change-password-form" action="change-profile" method="post">    
+
+          <label>New Password:</label>
+          <input id="newPassword" name="newPassword" type="password">
+
+          <Br>
+            <label>Confirm New Password:</label>
+            <input id="confirmNewPassword" name="confirmNewPassword" type="password">
+
+            <br>
+          <input type="submit" value="Update Password">        
+        </form>
+
+      </header>
+     
+      <script>document.getElementById("newPassword").focus();</script>
+    </section>
+</section>  
+
+<%- include('../partials/footer'); %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

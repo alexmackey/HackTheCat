@@ -1,0 +1,41 @@
+#banner h2.warning {
+	font-size: 1em;
+	background: #ff0000;
+	color: #ffffff;
+	margin-top: 65px;
+	padding: 10px;
+	text-align: center;
+}
+
+.bike{
+	width: 30%;
+	height: 30%;
+}
+
+textarea, input[type="text"] {
+	background-color: #a39b7d30;
+	color: #000000;
+}
+
+textarea {
+	height: 150px;
+}
+
+label {
+	font-size: 1.2em;
+}
+
+h3 {
+	font-weight: bold;
+}
+
+#form-message {
+	font-size: 1.2em;
+	color: #ff0000;
+}
+
+#login-form input[type="text"], #login-form input[type="password"], #change-password-form input[type="text"], #change-password-form input[type="password"] {
+	display: block;
+    margin : 0 auto;
+	width: 30%;
+}

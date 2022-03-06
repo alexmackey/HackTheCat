@@ -1,0 +1,42 @@
+<section id="main" class="container">
+
+  <section class="box special">
+    <header class="major">
+
+      <img src="/assets/images/catbicycles-logo.png" />
+      <br />
+
+      <% if (greeting){ %>
+        <h3>Hello, <%- greeting %>!</h3>
+        <BR><BR>
+        <% } %>
+
+          <h3> Welcome! we're a specialist bike shop and stock an extensive range of bikes.
+            Whether you are looking for a sleek racing bike for your siamese cat, or a classic road bike for your tabby
+            we've got you covered.
+          </h3>
+
+          <BR><BR>
+
+
+
+          <% for(var i=0; i < data.length; i++) { %>
+            <tr>
+              <h3><a href="detail?productId=<%= data[i].ProductId %>">
+                  <%= data[i].ProductName %>
+              </h3></a>
+
+              <img src="assets/images/<%= data[i].SmallImageUrl %>" class="bike" alt="" />
+
+              <BR>
+              <span>$300.00</span>
+              <hr>
+            </tr>
+            <% } %>
+
+
+              <p></p>
+    </header>
+
+  </section>
+</section>

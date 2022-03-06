@@ -1,0 +1,15 @@
+{
+  "configurations": [
+      {
+          "type": "node",
+          "request": "launch",
+          "name": "Hackthecat",
+          "skipFiles": [
+              "<node_internals>/**",
+              "${workspaceFolder}/node_modules/**/*.js",
+          ],
+          "program": "${workspaceFolder}/web/app.js",
+          "cwd": "${workspaceFolder}/web"
+      }
+  ]
+}

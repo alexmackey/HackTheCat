@@ -1,0 +1,54 @@
+﻿ <%- include('../partials/header'); %>
+  
+  <section id="banner">
+  
+  </section>
+
+  
+  <section id="main" class="container">
+
+    <section class="box special">
+      <header class="major">
+        <h2>Login</h2>     
+        
+        <hr>
+       <% if (message!='') { %>
+          <p id="form-message"><%= message %></p>
+          <BR><BR>
+        <% } %>
+
+
+        <form id="login-form" action="signin" method="post">    
+
+          <label>Username:</label>
+          <input id="username" name="username" type="text"></textarea>
+
+          <Br>
+            <label>Password:</label>
+            <input id="password" name="password" type="password"></textarea>
+
+            <br>
+          <input type="submit" value="Login">        
+        </form>
+
+      </header>
+     
+      <script>document.getElementById("username").focus();</script>
+    </section>
+</section>  
+
+<%- include('../partials/footer'); %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
