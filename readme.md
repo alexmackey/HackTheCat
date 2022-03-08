@@ -1,4 +1,4 @@
-# Hackthecat - Better Defence Through Learning Offense
+# Hackthecat - Better Defence through Learning Offense
 Hackthecat is a vulnerable node express/mysql app intended for teaching, demonstrating and practicing common security issues and defensive techniques.
 
 ![HackTheCat Logo](web/assets/images/hackTheCatLogo.png?raw=true "HackTheCat Logo")
@@ -9,9 +9,9 @@ This is also a good practice application for those studying for security certifi
 
 ## IMPORTANT READ ME FIRST
 
-This application is intended to teach and learn AppSec concepts and deliberately contains many security issues. 
+This application is intended to teach and learn AppSec concepts and contains many security issues. 
 
-**Under no circumstances should this code be installed on an internet facing or sensitive machine. If an attacker can access this application then it will be very easy for them to gain full access to the machine it is running on and potentially the network it is connected to.**
+**Under no circumstances should this app be exposed directly to the internet or installed on a sensitive machine/network. If an attacker can access the site then it will be very easy for them to gain full access to the machine it is running on and potentially the network the network it is connected to.**
 
 This software is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode) and as per the license:
 
@@ -45,8 +45,8 @@ This sample application contains many issues you can practice exploting and fixi
 * RCE via Side Template Injection (SSTI) in vulnerable version of pug template engine (2.0.4)
 * Unrestricted file upload
 * Left over credentials file discoverable via brute force
-* Poor and inconsitently implemented authentication approach
-* Some crappy CSS/HTML from me 
+* Poor and inconsistently implemented authentication approach
+* Some crappy CSS/HTML and equally dubious Node code 
 
 Found something else? Awesome let me know :)
 
@@ -75,7 +75,7 @@ If you want to use Docker option well you'll obviously need Docker and Python as
 
 ## Setup
 
-**IMPORTANT! Again, do not install this application on a internet or sensitive machine** 
+**IMPORTANT! Again be careful where you install this site as it will be easy for an attacker to exploit it** 
 
 This application is very simple and consists of:
 
@@ -107,7 +107,7 @@ Note if you make changes to the code then you will need to rebuild the images so
 
 Manual setup has a few more steps but is pretty easy.
 
-In this example we'll setup a database called hackthecat, a user to access this database and give them the password catsarebest.
+In this example we'll setup a database called `hackthecat`, a user to access this database and give them the password `catsarebest`.
 
 ### Setup Database
 
