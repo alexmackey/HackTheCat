@@ -1,7 +1,7 @@
-# Hackthecat - Better Defence through Learning Offense
-Hackthecat is a vulnerable node express/mysql app intended for teaching, demonstrating and practicing common security issues and defensive techniques.
+# Hackthecat - Better Defence through Learning Offence
+Hackthecat is a deliberately vulnerable node express/mysql app intended for teaching, demonstrating and practicing AppSec skills.
 
-![HackTheCat Logo](web/assets/images/hackTheCatLogo.png?raw=true "HackTheCat Logo")
+![HackTheCat Logo ](web/assets/images/hackTheCatLogo.png?raw=true "HackTheCat Logo")
 
 AppSec is generally not taught well (if at all) and we can write better, more secure applications if we understand the approaches and techniques attackers will use to exploit solutions. This sample application allows you to attack (and fix up) various common issues.
 
@@ -9,9 +9,9 @@ This is also a good practice application for those studying for security certifi
 
 ## IMPORTANT READ ME FIRST
 
-This application is intended to teach and learn AppSec concepts and contains many security issues. 
+This application is intended to teach and learn AppSec concepts and contains many security issues including some that will lead to RCE (Remote Code Execution). 
 
-**Under no circumstances should this app be exposed directly to the internet or installed on a sensitive machine/network. If an attacker can access the site then it will be very easy for them to gain full access to the machine it is running on and potentially the network the network it is connected to.**
+**Under no circumstances should this app be exposed directly to the internet or installed on a sensitive machine/network. If an attacker can access this site then it will be very easy for them to gain full access to the machine it is running on and potentially the network the machine is connected to.**
 
 This software is licensed under [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode) and as per the license:
 
@@ -30,7 +30,7 @@ This software is licensed under [Creative Commons Attribution-NonCommercial 4.0 
      possible, most closely approximates an absolute disclaimer and
      waiver of all liability.
 
-## Issues 
+## What issues does this application contain?
 
 **Spoiler alert! Skip this section if you want to find the various issues yourself :)**
 
@@ -44,9 +44,10 @@ This sample application contains many issues you can practice exploting and fixi
 * RCE via vulnerable version of node-serialize (0.4)
 * RCE via Side Template Injection (SSTI) in vulnerable version of pug template engine (2.0.4)
 * Unrestricted file upload
-* Left over credentials file discoverable via brute force
+* Left over mock credentials file discoverable via brute force
+* IDOR (Indirect object reference)
 * Poor and inconsistently implemented authentication approach
-* Some crappy CSS/HTML and equally dubious Node code 
+* Some crappy CSS/HTML hacks to a template I made..
 
 Found something else? Awesome let me know :)
 
@@ -66,9 +67,9 @@ The database will be setup to contain the following two users:
 
 This application has been tested on Linux (Ubuntu) and Windows 10.
 
-If you are not using the docker images you will need the following installed:
+If you are not using the docker images you will need the following:
 
-* Node (tested with v16.13.2 Ubuntu)
+* Node (tested with v16.14.0 Ubuntu)
 * MySQL (tested with 8.0.28-0ubuntu0.20.04.3 Ubuntu)
 
 If you want to use Docker option well you'll obviously need Docker and Python as well for some reason I dont understand which I think has something to do with Docker compose.
@@ -115,11 +116,11 @@ In this example we'll setup a database called `hackthecat`, a user to access thi
 1. Create a database: `CREATE DATABASE hackthecat;`
 1. Create a user: `CREATE USER 'hackthecat'@'localhost' IDENTIFIED BY 'catsarebest';`
 1. Give the new user all privileges to access the hackthecat database: `GRANT ALL PRIVILEGES ON hackthecat.* TO 'hackthecat'@'localhost';`
-1. Refresh the database privileges `flush privileges;`
+1. Refresh the database privileges with `flush privileges;`
 
 ### Setup application
 
-1. First we need to create a file called .env in /web which will tell the app how to conenct to the database. Take the following content (replacing the <..> bits with options you have used and ensuring there are no <>'s in this file!:
+1. First we need to create a file called .env in /web which will tell the app how to conenct to the database. Take the following content (replacing the <..> bits with options you have used) and ensuring there are no <>'s in this file!:
 
 ```
 PORT=<port you want to run the app on e.g. 3000>
@@ -159,13 +160,13 @@ To learn more about appsec I recommend the following resources:
 
 Original Idea and concept: Alex Mackey
 
-### Design
+### Template
 
-Design Hacked/Adapted from https://html5up.net/
+Design Hacked/Adapted from [https://html5up.net/](https://html5up.net/) (creative commons Attribution 3: https://html5up.net/license)
 
 ### Images
 
-Cat Logo produced via Fiverr and the awesome [fiverdesigns](https://www.fiverr.com/fiverdesigns).
+HackTheCatLogo and Cat Bicycles logo produced via Fiverr and the awesome [fiverdesigns](https://www.fiverr.com/fiverdesigns).
 
 Bike Images from Pixabay (free stock photography and royalty-free stock media website):
 
