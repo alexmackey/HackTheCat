@@ -22,8 +22,9 @@ module.exports = {
     get: async function (productId) {
 
         promisePool = await connectionService.GetConnectionPool();
-
-        const [products] = await promisePool.execute("SELECT * FROM Products WHERE ProductID=?", [productId]);
+        const sql = "SELECT * FROM Products WHERE ProductID=" + productId;
+        console.log(sql);
+        const [products] = await promisePool.execute(sql);
         return products;
     }
 }

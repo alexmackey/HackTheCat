@@ -19,7 +19,8 @@ const port = process.env.PORT || 3000;
 const oneDay = 1000 * 60 * 60 * 24;
 const sessions = require('express-session');
 
-app.use(morgan('dev'));
+//Uncomment to see detailed logs
+//app.use(morgan('dev'));
 
 app.use(sessions(
   {

