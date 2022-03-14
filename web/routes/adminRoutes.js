@@ -71,7 +71,7 @@ router.post('/upload-images', (req, res) => {
 
 router.get('/getuser', async function (req, res) {   
 
-    users = userService.get(req.query.username)
+    users = await userService.get(req.query.username)
     res.send(users);     
 });
 
