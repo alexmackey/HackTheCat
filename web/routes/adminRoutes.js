@@ -4,7 +4,8 @@ const express = require('express'),
       productService = require('../services/productService'),
       userService = require('../services/userService'),
       textContentService = require('../services/textContentService');
-      
+      path = require('path');
+
 router.get('/home', async function (req, res) { 
   
     if(!req.session.isAdmin){
@@ -30,7 +31,7 @@ router.post('/update-message', function (req, res) {
 });
 
 router.get('/get-image', function (req, res) {
-    const path = require ('path');
+    
     var imageFile = path.join(__dirname, req.query.imageName);
     console.log(imageFile);
     res.sendFile(imageFile);
@@ -57,7 +58,7 @@ router.post('/upload-images', (req, res) => {
         } else {
             let myFile = req.files.myFile;
 
-            myFile.mv(path.join(__dirname, "uploads/" + myFile.name));
+            myFile.mv(path.join(__dirname, "../uploads/" + myFile.name));
 
             res.send({
                 status: true,
@@ -65,6 +66,7 @@ router.post('/upload-images', (req, res) => {
             });
         }
     } catch (err) {
+        console.log(err);
         res.status(500).send(err);
     }
 });

@@ -40,7 +40,7 @@ CREATE TABLE ContactMessages (
 INSERT INTO Users (Username, Email, Password, IsAdmin) VALUES ( 'admin', 'admin@hackthecat.com', 'pass', true);
 INSERT INTO Users (Username, Email, Password, IsAdmin) VALUES ( 'user', 'user@hackthecat.com', 'pass', false);
 
-INSERT INTO Products (ProductName, Cost, IsActive, SmallImageUrl, LargeImageUrl) VALUES ('Bike 1', 100, 1,  'bike01.png', 'bike01.png');
+INSERT INTO Products (ProductName, Cost, IsActive, SmallImageUrl, LargeImageUrl) VALUES ('Bike 1', 500, 1,  'bike01.png', 'bike01.png');
 INSERT INTO Products (ProductName, Cost, IsActive, SmallImageUrl, LargeImageUrl) VALUES ('Bike 2', 200, 1, 'bike02.png', 'bike02.png');
 INSERT INTO Products (ProductName, Cost, IsActive, SmallImageUrl, LargeImageUrl) VALUES ('Super Future Bike 3', 200, 0, 'bike03.png', 'bike03.png');
 
