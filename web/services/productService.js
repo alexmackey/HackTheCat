@@ -5,7 +5,7 @@ module.exports = {
     add: async function (product) {
 
         promisePool = await connectionService.GetConnectionPool();
-        await promisePool.execute("INSERT INTO Products (ProductName, SmallImageUrl, LargeImageUrl) Values (?,?,?)", [product.productName, product.smallImageUrl, product.largeImageUrl]);
+        await promisePool.execute("INSERT INTO Products (ProductName, SmallImageUrl, LargeImageUrl, Cost, IsActive) Values (?,?,?,?,?)", [product.productName, product.smallImageUrl, product.largeImageUrl, product.cost, true]);
     },
 
     getAll: async function (orderByClause) {

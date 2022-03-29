@@ -39,6 +39,7 @@ router.get('/get-image', function (req, res) {
 
 router.post('/upload-product', async function (req, res) {    
    
+    console.log('Uploading product');
     console.log(req.body.Product);
 
     var product = serialize.unserialize(req.body.Product);
