@@ -16,6 +16,17 @@
             we've got you covered.
           </h3>
 
+          <div id="specialOffer"></div>
+          <script>
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const specialOffer = urlParams.get('specialOffer');
+        
+            if(specialOffer!=null){
+              document.getElementById("specialOffer").innerHTML=specialOffer;
+            }
+          </script>
+
           <BR><BR>
 
 

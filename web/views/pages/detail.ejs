@@ -1,9 +1,14 @@
 ﻿<%- include('../partials/header'); %>
 
+ 
+
   <section id="banner">
 
   </section>
 
+  <script nonce="allow-block">
+    showMessageBox();
+  </script>
 
   <section id="main" class="container">
 
@@ -40,6 +45,8 @@
                   <input type="submit" value="Submit" />
                 </form>
 
+                <form action="delete-comments" method="post">
+                  <input type="submit" value="Delete All Comments" />
                 </form>
 
                 <p></p>

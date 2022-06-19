@@ -39,3 +39,11 @@ h3 {
     margin : 0 auto;
 	width: 30%;
 }
+
+
+#specialOffer {
+    font-size: 50px;
+    color: blue;
+    font-weight: bold;
+    padding-top: 10px;
+}

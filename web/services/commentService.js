@@ -14,6 +14,11 @@ module.exports = {
         promisePool = await connectionService.GetConnectionPool();
         const [commentData] = await promisePool.execute("SELECT * FROM Comments WHERE ProductID=? ORDER BY CommentDate DESC", [productId]);
         return commentData;
+    },
+
+    deleteAll: async function () {
+        promisePool = await connectionService.GetConnectionPool();
+        await promisePool.execute("DELETE FROM Comments");
     }
 
 }

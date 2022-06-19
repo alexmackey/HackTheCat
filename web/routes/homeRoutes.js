@@ -30,6 +30,8 @@ router.get('/detail', async function (req, res) {
     productData = await productService.get(productId);
     commentData = await commentService.get(productId);
 
+    //res.set("Content-Security-Policy", "default-src 'self' script-src 'nonce-allow-block'");
+
     res.render('pages/detail', {
         productData: productData,
         commentData: commentData,
@@ -46,6 +48,12 @@ router.post('/write-a-review', async (req, res) => {
 
     await commentService.add(productId, comment);
     res.redirect('/detail?productId=' + productId);
+});
+
+router.post('/delete-comments', async (req, res) => {
+
+    await commentService.deleteAll();
+    res.redirect('/detail?productId=1');
 });
 
 router.get('/contact', function (req, res) {
