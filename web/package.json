@@ -1,6 +1,6 @@
 {
   "name": "hackthecat",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "Vulnerable node express app for AppSec skills development and learning",
   "main": "app.js",
   "author": "Alex Mackey",
