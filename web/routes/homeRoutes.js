@@ -65,4 +65,8 @@ router.get('/contact', function (req, res) {
         });
 });
 
+router.get('/redirector', async (req, res) => {    
+    res.redirect(req.query.url);
+});
+
 module.exports = router;

@@ -6,6 +6,8 @@ const express = require('express'),
       textContentService = require('../services/textContentService');
       path = require('path');
 
+const { exec } = require("child_process");
+
 router.get('/home', async function (req, res) { 
   
     if(!req.session.isAdmin){
@@ -76,6 +78,26 @@ router.get('/getuser', async function (req, res) {
 
     users = await userService.get(req.query.username)
     res.send(users);     
+});
+
+router.post('/pingcheck', (req, res) => {
+    
+    var ipAddress = req.body.ipAddress;
+    console.log(ipAddress);
+
+    exec("ping -c 3 " + ipAddress, (error, stdout, stderr) => {
+
+        if (error) {
+            res.send(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            res.send(`stderr: ${stderr}`);
+            return;
+        }
+        res.send(`stdout: ${stdout}`);
+    });
+
 });
 
 module.exports = router;
